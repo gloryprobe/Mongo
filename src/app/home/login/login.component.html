@@ -1,0 +1,31 @@
+<div class="h-screen flex flex-col">
+    <div class="flex flex-col gap-8 m-auto">
+        <div class="bg-[#FAFAFA] m-auto drop-shadow-lg p-14 rounded-md">
+            <div class="flex flex-col gap-5">
+                <h2 class="font-bold text-xl">Login</h2>
+                <div class="singleInput">
+                    <label for="EmailId">Email
+                    </label>
+                    <input type="text" placeholder="Enter Email" id="email" [(ngModel)]="email" />
+
+                </div>
+                <div class="passwordInput">
+                    <label for="Password">Password </label>
+                    <div class="container">
+                        <input placeholder="Enter Password" id="password" [(ngModel)]="password" />
+                        <!-- <img id="show" *ngIf="!showPassword" src="../../assets/svg/eye.svg" (click)="togglePassword()" />
+              <img id="unshow" *ngIf="showPassword" (click)="togglePassword()" src="../../assets/svg/closeEye.svg" /> -->
+                    </div>
+
+
+                </div>
+
+                <button type="submit" class="defaultBlueButtoon" (click)="login()">
+                    Login
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

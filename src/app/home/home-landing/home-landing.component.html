@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="p-8">
+    <div class="heading-button">
+        <div>
+            <h1>Project Name : HMS</h1>
+        </div>
+        <div class="flex gap-4 items-center">
+            <button class="primary-button !p-1 !px-2" (click)="refreshData()">
+                <mat-icon class="">sync</mat-icon>
+            </button>
+            <button class="primary-button" (click)="openDailog()">Launch Instance</button>
+        </div>
+    </div>
+    <div class="mt-8">
+        <pp-table [columns]="columns" [data]="tableData" [config]="config">
+            <ng-template ppWidgetName="TestPlan" let-row>
+                <span class="!text-base text-black">{{row.TestPlan}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="Version" let-row>
+                <span class="!text-base text-black">{{row.Version}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="Type" let-row>
+                <span class="!text-base text-black">{{row.Type}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="action-button" let-row>
+                <mat-icon>visibility</mat-icon>
+            </ng-template>
+        </pp-table>
+    </div>
+</div>

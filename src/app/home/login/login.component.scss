@@ -1,0 +1,91 @@
+.defaultBlueButtoon:disabled{
+    background: #ACACAC;
+    border: 1px solid #ACACAC;
+  }
+  .defaultOutlineButton:disabled{
+    color: #D2D2D2;
+    border: 1px solid #D2D2D2;
+  
+  }
+  .defaultOutlineButton:enabled{
+    color: #045B5B;
+    border: 1px solid #045B5B;
+  }
+.singleInput {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 12px;
+    }
+
+    ::placeholder {
+      color: #6e737a;
+      font-size: 12px;
+      /* Change to your desired color */
+    }
+
+    input,
+    select {
+      margin-top: 8px;
+      padding: 0.6rem;
+      border-radius: 5px;
+      border: 1px solid #a0a5ac;
+      outline: blue;
+      background-color: transparent;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #8cb1e2;
+    }
+
+    small {
+      color: red;
+      font-size: smaller;
+    }
+}
+.passwordInput {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 12px;
+    }
+
+    ::placeholder {
+      color: #6e737a;
+      font-size: 12px;
+      /* Change to your desired color */
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 8px;
+        padding: 0.6rem;
+        border-radius: 5px;
+        border: 1px solid #a0a5ac;
+        outline: blue;
+        background-color: transparent;
+    }
+    input,
+    select {
+     
+      background-color: transparent;
+    }
+    input:focus,
+    select:focus {
+      outline: none;
+    }
+    
+
+    small {
+      color: red;
+      font-size: smaller;
+    }
+}
+
+img{
+    width: 25px;
+    cursor: pointer;}
+   

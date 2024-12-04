@@ -1,0 +1,39 @@
+<main class="snackBar green " *ngIf="data.type=='success'">
+    <div class="flex items-center justify-center">
+        <!-- <img src="../../../assets/svg/snackBarTickIcon.svg" alt="tick icon" /> -->
+        <span>{{data.message}}</span>
+    </div>
+    <button (click)="closeSnackBar()">
+        <!-- <img src="../../../assets/svg/closeIconWhite.svg" alt="close icon"> -->
+    </button>
+</main>
+
+<main class="snackBar yellow " *ngIf="data.type=='warn'">
+    <div class="flex items-center justify-center">
+        <!-- <img src="../../../assets/svg/snackBarExclamationIcon.svg" alt="warn icon" /> -->
+        <span>{{data.message}}</span>
+    </div>
+    <!-- <button (click)="closeSnackBar()"> -->
+        <!-- <mat-icon>close</mat-icon> -->
+    <!-- </button> -->
+</main>
+
+<main class="snackBar red " *ngIf="data.type=='error'">
+    <div class="flex items-center justify-center">
+        <!-- <img src="../../../assets/svg/snackBarErrorIcon.svg" alt="error icon" /> -->
+        <span>{{data.message}}</span>
+    </div>
+    <!-- <button (click)="closeSnackBar()"> -->
+        <!-- <img src="../../../assets/svg/closeIconWhite.svg" alt="close icon"> -->
+    <!-- </button> -->
+</main>
+
+<main class="snackBar neutral " *ngIf="data.type=='info'">
+    <div class="flex items-center justify-center">
+        <!-- <img src="../../../assets/svg/snackBarInfoIcon.svg" alt="tick icon" /> -->
+        <span>{{data.message}}</span>
+    </div>
+    <button (click)="closeSnackBar()">
+        <!-- <img src="../../../assets/svg/closeIconWhite.svg" alt="close icon"> -->
+    </button>
+</main>

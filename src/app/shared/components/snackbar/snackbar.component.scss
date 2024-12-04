@@ -1,0 +1,24 @@
+.snackBar {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 5px;
+  justify-content: center;
+}
+.green {
+  background-color: #237e03;
+}
+.yellow {
+  background-color: #dc8d05;
+  color: black;
+}
+.red {
+  background-color: #c50c0c;
+}
+.neutral {
+  background-color: #45494f;
+}
+
+.mdc-snackbar__label {
+  padding: 0 !important;
+}
