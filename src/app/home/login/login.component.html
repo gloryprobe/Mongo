@@ -12,16 +12,15 @@
                 <div class="passwordInput">
                     <label for="Password">Password </label>
                     <div class="container">
-                        <input placeholder="Enter Password" id="password" [(ngModel)]="password" />
+                        <input placeholder="Enter Password" id="password" [(ngModel)]="password" type="password" />
                         <!-- <img id="show" *ngIf="!showPassword" src="../../assets/svg/eye.svg" (click)="togglePassword()" />
               <img id="unshow" *ngIf="showPassword" (click)="togglePassword()" src="../../assets/svg/closeEye.svg" /> -->
                     </div>
-
-
                 </div>
-
-                <button type="submit" class="defaultBlueButtoon" (click)="login()">
+                <button type="submit" class="bg-[#68217A] text-white rounded-md p-2 login-btn flex items-center justify-center gap-4" (click)="login()"
+                    [disabled]="!password || !email || spinner">
                     Login
+                    <mat-spinner diameter="20" color="accent" *ngIf="spinner"></mat-spinner>
                 </button>
             </div>
         </div>

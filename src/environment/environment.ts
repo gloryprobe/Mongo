@@ -7,7 +7,7 @@ export const environment = {
     // keycloakRealm: 'HMS',
     // clientId: 'frontend',
 
-    dataApiUrl: 'http://10.10.5.61:8000/',
+    dataApiUrl: 'http://10.10.5.55:8001/',
 
 
 }

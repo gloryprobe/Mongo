@@ -1,0 +1,49 @@
+@use '/src/styles.scss' as *;
+
+.dialog-heading{
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+
+.grid-section {
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    // gap: 1rem;
+    // border: 1px solid #d4d4d4;
+    padding: 0.4rem;
+    // border-radius: 6px;
+  }
+
+  .custom-file-upload {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: $primary-color ;
+    color: white;           
+    padding: 8px 16px;       
+    border-radius: 4px;    
+    cursor: pointer;       
+    border: none;            
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #72517a; 
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; 
+}
+
+.upload-icon {
+    font-size: 20px; 
+}
+
+span{
+    font-family: 'Roboto', sans-serif;
+}

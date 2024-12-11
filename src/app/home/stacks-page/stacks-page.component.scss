@@ -1,0 +1,6 @@
+.scrollable-content {
+    padding-top: 60px; /* Adjust based on the height of your navbar */
+    // height: calc(100vh - 80px); /* Full height minus navbar height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    height: 100vh;
+}

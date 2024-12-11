@@ -1,22 +1,15 @@
-<header class="navbar-container">
-    <div>
-        <img src="assets/logo.svg" alt="">
-    </div>
-    <div class="navbar-items">
-        <span>
-            <mat-icon>settings</mat-icon>
-        </span>
-        <span>
-            <mat-icon>notifications</mat-icon>
-        </span>
-        <span>
-            <mat-icon>person</mat-icon>
-        </span>
-        <span>
-            John Doe
-        </span>
-        <span (click)="logout()">
-            <mat-icon>logout</mat-icon>
-        </span>
+<header class="navbar">
+    <img src="assets/logo.svg" alt="bell-icon" class="icon__medium">
+    <nav class="navbar__links">
+        <a *ngFor="let route of routes"
+            [routerLink]="route.path[0]" class="navbar__link" routerLinkActive="navbar__link--active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <h1>{{ route.label}}</h1>
+        </a>
+    </nav>
+    <div class="navbar__icons">
+        <button (click)="logout()">
+            <mat-icon class="text-[#68217A]">logout</mat-icon>
+        </button>
     </div>
 </header>

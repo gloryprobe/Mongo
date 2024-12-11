@@ -1,0 +1,30 @@
+<div class="h-full overflow-hidden">
+    <div class="dialog-heading flex justify-between items-start overflow-hidden">
+        <h1>View Logs</h1>
+        <button type="button" mat-dialog-close><mat-icon>close</mat-icon></button>
+    </div>
+    <div class="p-6 pb-0 flex flex-col gap-5">
+        <pp-table [columns]="columns" [data]="tableData" [config]="config" tableHeight="500">
+            <ng-template ppWidgetName="newEventId" let-row>
+                <span [matTooltip]="row.EventId" matTooltipPosition="below"
+                    class="truncate block">{{row.newEventId}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="LogicalResourceId" let-row>
+                <span [matTooltip]="row.LogicalResourceId" matTooltipPosition="below"
+                    class="truncate block">{{row.LogicalResourceId}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="ResourceStatus" let-row>
+                <span [matTooltip]="row.ResourceStatus" matTooltipPosition="below"
+                    class="truncate block">{{row.ResourceStatus}}</span>
+            </ng-template>
+            <ng-template ppWidgetName="Timestamp" let-row>
+                <span [matTooltip]="row.Timestamp" matTooltipPosition="below"
+                    class="truncate block">{{row.Timestamp}}</span>
+            </ng-template>  
+        </pp-table>
+    </div>
+    <div class="flex justify-end px-6 py-4 gap-4 !pt-0">
+        <button type="button" class="outline-button mt-auto" mat-dialog-close>Cancel</button>
+        <!-- <button type="button" class="primary-button mt-auto" (click)="submit()">Submit</button> -->
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<app-navbar class="fixed w-full top-0 left-0 z-1000"></app-navbar>
+<div class="scrollable-content">
+    <div class="p-8 overflow-hidden">
+        <div class="flex justify-between">
+            <div class="heading-button">
+                <div class="flex flex-col gap-4">
+                    <h1>Stacks</h1>
+                    <div class="flex flex-row border-[#a0a5ac] border rounded-md  bg-white p-1 w-[230px]">
+                        <input class="outline-none px-1 bg-inherit" placeholder="Search" (input)="getSearchTerm($event)">
+                        <mat-icon class="text-[#a0a5ac]">search</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-4 items-end">
+                <!-- <button class="primary-button !p-1 !px-2" (click)="refreshData()">
+                    <mat-icon class="">sync</mat-icon>
+                </button> -->
+                <button class="primary-button"  (click)="openLaunchInstance()">Launch Instance</button>
+            </div>
+        </div>
+        <div class="mt-8">
+            <pp-table [columns]="columns" [data]="tableData" [config]="config">
+                <ng-template ppWidgetName="StackName" let-row>
+                    <span [matTooltip]="row.StackName" matTooltipPosition="below"
+                        class="truncate block">{{row.StackName}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="newStackId" let-row>
+                    <span [matTooltip]="row.StackId" matTooltipPosition="below"
+                        class="truncate block">{{row.newStackId}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="StackStatus" let-row>
+                    <span [matTooltip]="row.StackStatus" matTooltipPosition="below"
+                        class="truncate block">{{row.StackStatus}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="CreationTime" let-row>
+                    <span [matTooltip]="row.CreationTime" matTooltipPosition="below"
+                        class="truncate block">{{row.CreationTime}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="action-button" let-row>
+                    <div class="flex gap-4 justify-end">
+                        <button (click)="openLogsDailog(row)" class="outline-button">
+                            View Logs
+                        </button>
+                        <button (click)="openDailog(row)" class="primary-button">
+                            Deploy
+                        </button>
+                        <button (click)="openDeletePopup(row)" class="flex items-center justify-center outline-icon-button">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </ng-template>
+            </pp-table>
+        </div>
+    </div>
+</div>

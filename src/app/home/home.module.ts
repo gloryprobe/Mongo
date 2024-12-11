@@ -13,14 +13,23 @@ import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { StacksPageComponent } from './stacks-page/stacks-page.component';
+import { ViewStacksComponent } from './dailog/view-stacks/view-stacks.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ViewLogsComponent } from './dailog/view-logs/view-logs.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ConfirmationPopupComponent } from './dailog/confirmation-popup/confirmation-popup.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     HomeLandingComponent,
     LaunchInstanceComponent,
-    NavbarComponent
+    NavbarComponent,
+    StacksPageComponent,
+    ViewStacksComponent,
+    ViewLogsComponent,
+    ConfirmationPopupComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +41,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatSelectModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatTooltipModule
   ]
 })
 export class HomeModule { }

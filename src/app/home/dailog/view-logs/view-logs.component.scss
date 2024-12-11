@@ -1,0 +1,9 @@
+@use '/src/styles.scss' as *;
+
+.dialog-heading{
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}

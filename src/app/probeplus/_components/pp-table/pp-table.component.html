@@ -80,13 +80,15 @@
       dataSource.data?.length === 0
     "
   >
-    {{ "error.no_data" | translate }}
+    <!-- {{ "error.no_data" | translate }} -->
+    No Data Found
   </div>
   <div
     class="mat-error text-center my-4 mx-2"
     *ngIf="config?.tableState === 'FAILURE' && dataSource.data?.length === 0"
   >
-    {{ "error.something_wrong" | translate }}
+    <!-- {{ "error.something_wrong" | translate }} -->
+      Something Went Wrong
   </div>
 </div>
 

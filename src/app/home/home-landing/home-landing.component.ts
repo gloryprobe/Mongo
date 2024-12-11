@@ -9,32 +9,31 @@ import { ApiService } from 'src/app/shared/services/api.service';
   templateUrl: './home-landing.component.html',
   styleUrls: ['./home-landing.component.scss']
 })
-export class HomeLandingComponent implements OnInit{
+export class HomeLandingComponent implements OnInit {
   constructor(private dailog: MatDialog,
     private apiService: ApiService
   ) { }
   ngOnInit(): void {
-    this.apiService.getInstances().subscribe((res)=>{
-      console.log(res);
-      this.tableData = res.data
-    })
-
+    this.refreshData()
   }
 
-  refreshData(){
-    this.tableData = [];
-    this.apiService.getInstances().subscribe((res)=>{
+  refreshData() {
+    this.config.tableState = TableState.LOADING;
+    this.apiService.getInstances().subscribe((res) => {
       console.log(res);
       this.tableData = res.data
+      this.config.tableState = TableState.SUCCESS
+    }, (error) => {
+      this.config.tableState = TableState.FAILURE
     })
   }
-//   {
-//     "instance_id": "i-04912f213a7a436f0",
-//     "private_ip": "N/A",
-//     "public_ip": "N/A",
-//     "state": "terminated",
-//     "name": "MongoDB-Instance"
-// },
+  //   {
+  //     "instance_id": "i-04912f213a7a436f0",
+  //     "private_ip": "N/A",
+  //     "public_ip": "N/A",
+  //     "state": "terminated",
+  //     "name": "MongoDB-Instance"
+  // },
   columns = [
     {
       id: 'instance_id',
@@ -93,7 +92,7 @@ export class HomeLandingComponent implements OnInit{
     tableState: TableState.DEFAULT,
   };
   tableData = [
-    
+
   ]
   openDailog() {
     this.dailog.open(LaunchInstanceComponent, { width: '800px', maxHeight: '500px' })

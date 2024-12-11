@@ -8,7 +8,7 @@
 html,
 body {
     height: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 body {
@@ -37,6 +37,13 @@ $primary-color: #68217A;
     border-radius: 5px;
 }
 
+.outline-icon-button {
+    border: 1px solid red;
+    color: red;
+    padding: 0.3rem 0.3rem;
+    border-radius: 5px;
+}
+
 .mat-mdc-select {
     margin-top: 8px;
     width: 100%;
@@ -44,7 +51,7 @@ $primary-color: #68217A;
     padding: 0.7rem 0.8rem;
     border-radius: 8px;
 }
-
+//snackbar issue
 .mdc-snackbar {
     &__label {
         padding: 0 !important
@@ -57,4 +64,41 @@ $primary-color: #68217A;
 
 .mat-mdc-snack-bar-container .mdc-snackbar__surface {
     border-radius: 6px !important
+}
+
+//scrollbar styles
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #D9C2E9;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #D9C2E9;
+    border-radius: 20px;
+}
+
+// progress bar color changes
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #b651ff !important;
+}
+
+
+
+.dialog-heading{
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
 }

@@ -27,7 +27,7 @@ export class PpTableComponent {
   @Input() config: any; // PPTableConfig
   @Input() columns: any[] = [];
   @Input() data: any[] = [];
-  @Input() tableLength: number = 0; // Table height in px
+  @Input() tableHeight: string = ''; // Table height in px
   @Output() page: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
 
   @ContentChildren(PpWidgetNameDirective)
@@ -88,7 +88,7 @@ export class PpTableComponent {
 
   getTableContainerStyle() {
     return {
-      height: this.tableLength > 0 ? `${this.tableLength}px` : '620px',
+      height: this.tableHeight ? `${this.tableHeight}px` : '620px',
       overflow: 'auto',
       marginBottom: '1rem',
     };

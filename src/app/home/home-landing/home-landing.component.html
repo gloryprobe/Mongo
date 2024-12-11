@@ -1,30 +1,44 @@
-<app-navbar></app-navbar>
-<div class="p-8">
-    <div class="heading-button">
-        <div>
-            <h1>Project Name : HMS</h1>
+<div class="fixed w-full">
+    <app-navbar></app-navbar>
+    <div class="p-8">
+        <div class="heading-button">
+            <div>
+                <h1>Project Name : HMS</h1>
+            </div>
+            <div class="flex gap-4 items-center">
+                <button class="primary-button !p-1 !px-2" (click)="refreshData()">
+                    <mat-icon class="">sync</mat-icon>
+                </button>
+                <!-- <button class="primary-button" (click)="openDailog()">Launch Instance</button> -->
+            </div>
         </div>
-        <div class="flex gap-4 items-center">
-            <button class="primary-button !p-1 !px-2" (click)="refreshData()">
-                <mat-icon class="">sync</mat-icon>
-            </button>
-            <button class="primary-button" (click)="openDailog()">Launch Instance</button>
+        <div class="mt-8">
+            <pp-table [columns]="columns" [data]="tableData" [config]="config">
+                <ng-template ppWidgetName="instance_id" let-row>
+                    <span [matTooltip]="row.instance_id" matTooltipPosition="below"
+                        class="truncate block">{{row.instance_id}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="private_ip" let-row>
+                    <span [matTooltip]="row.private_ip" matTooltipPosition="below"
+                        class="truncate block">{{row.private_ip}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="public_ip" let-row>
+                    <span [matTooltip]="row.public_ip" matTooltipPosition="below"
+                        class="truncate block">{{row.public_ip}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="state" let-row>
+                    <span [matTooltip]="row.state" matTooltipPosition="below"
+                        class="truncate block">{{row.state}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="name" let-row>
+                    <span [matTooltip]="row.name" matTooltipPosition="below" class="truncate block">{{row.name}}</span>
+                </ng-template>
+                <ng-template ppWidgetName="action-button" let-row>
+                    <button class="primary-button !p-1 !px-2" (click)="refreshData()">
+                        <mat-icon class="">sync</mat-icon>
+                    </button>
+                </ng-template>
+            </pp-table>
         </div>
-    </div>
-    <div class="mt-8">
-        <pp-table [columns]="columns" [data]="tableData" [config]="config">
-            <ng-template ppWidgetName="TestPlan" let-row>
-                <span class="!text-base text-black">{{row.TestPlan}}</span>
-            </ng-template>
-            <ng-template ppWidgetName="Version" let-row>
-                <span class="!text-base text-black">{{row.Version}}</span>
-            </ng-template>
-            <ng-template ppWidgetName="Type" let-row>
-                <span class="!text-base text-black">{{row.Type}}</span>
-            </ng-template>
-            <ng-template ppWidgetName="action-button" let-row>
-                <mat-icon>visibility</mat-icon>
-            </ng-template>
-        </pp-table>
     </div>
 </div>
