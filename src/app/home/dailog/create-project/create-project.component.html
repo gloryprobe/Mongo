@@ -1,0 +1,88 @@
+<div>
+    <div class="dialog-heading">
+        <h1>Create Project</h1>
+    </div>
+    <div class="p-6">
+        <form action="" class="manageAdmin" [formGroup]="launchInstanceForm" (ngSubmit)="onFormSubmitted()" class="py-2">
+            <div class="addAndEditInputs">
+
+                <!-- <div class="singleInput">
+                </div> -->
+                <div class="grid gap-10 grid-cols-2">
+                    <div class="singleInput">
+                        <label for="project">Project <span>*</span></label>
+                        <input (keypress)="handleValidation('alphabetsOnly',$event)" type="text"
+                            formControlName="project">
+                    </div>
+
+                    <div class="singleInput">
+                        <label for="LastName">Domains<span>*</span></label>
+                        <mat-select placeholder="All" class="rounded-sm outline-none border border-[#a0a5ac] text-sm"
+                            name="Filter" id="Filter" formControlName="region">
+                            <mat-option [value]="region" *ngFor="let region of regions"> {{region}} </mat-option>
+                        </mat-select>
+                    </div>
+
+                    <div class="singleInput">
+                        <label for="LastName">Regions<span>*</span></label>
+                        <mat-select placeholder="All" class="rounded-sm outline-none border border-[#a0a5ac] text-sm"
+                            name="Filter" id="Filter" formControlName="region">
+                            <mat-option [value]="region" *ngFor="let region of regions"> {{region}} </mat-option>
+                        </mat-select>
+                    </div>
+
+                    <div class="singleInput">
+                        <label for="LastName">Microservices<span>*</span></label>
+                        <mat-select placeholder="All" class="rounded-sm outline-none border border-[#a0a5ac] text-sm"
+                            name="Filter" id="Filter" formControlName="region">
+                            <mat-option [value]="region" *ngFor="let region of regions"> {{region}} </mat-option>
+                        </mat-select>
+                    </div>
+
+
+                    <div class="singleInput">
+                        <label for="LastName">Servers<span>*</span></label>
+                        <mat-select placeholder="All" class="rounded-sm outline-none border border-[#a0a5ac] text-sm"
+                            name="Filter" id="Filter" formControlName="region">
+                            <mat-option [value]="region" *ngFor="let region of regions"> {{region}} </mat-option>
+                        </mat-select>
+                    </div>
+
+                    <!-- <div class="singleInput">
+                        <label for="subdomain">Sub Domain <span>*</span></label>
+                        <input (keypress)="handleValidation('alphabetsOnly',$event)" type="text"
+                            name="subdomain" formControlName="subdomain">
+
+                    </div>
+                    <div class="singleInput">
+                        <label for="mongodb_tag">Mongo DB Tag<span>*</span></label>
+                        <input (keypress)="handleValidation('alphabetsOnly',$event)" type="text" 
+                            name="mongodb_tag" formControlName="mongodb_tag">
+
+                    </div>
+                    <div class="singleInput">
+                        <label for="mongoexpress_tag">Mongo Express Tag <span>*</span></label>
+                        <input (keypress)="handleValidation('alphabetsOnly',$event)" type="text" 
+                            name="mongoexpress_tag" formControlName="mongoexpress_tag">
+
+                    </div> -->
+                </div>
+
+
+
+               
+            </div>
+
+            <div class="buttonSection space-x-3">
+                <button type="button" class="outline-button" mat-dialog-close>Cancel</button>
+                <button type="submit" class="defaultBlueButtoon relative" >
+                    <!-- <div *ngIf="formSubmissionLoading" class="spinner">
+                        <mat-progress-spinner strokeWidth="3" diameter="27" mode="indeterminate"
+                            color="accent"></mat-progress-spinner>
+                    </div> -->
+                    <span class="primary-button">Confirm</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
