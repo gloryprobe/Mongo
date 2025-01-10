@@ -116,7 +116,17 @@ export class ApiService {
   }
 
   getProjectById(projectId: string) {
-    const URL = this.BASE_URL + `api/project/project/${projectId}`;      
+    const URL = this.BASE_URL + `api/project/project/${projectId}`;        
+    return this.http.get<any>(URL).pipe(
+      catchError(error => {
+        this.handleError(error);
+        return throwError(() => error);
+      }));
+  }
+
+
+  getAllProjects() {
+    const URL = this.BASE_URL + `api/project/projects`;        
     return this.http.get<any>(URL).pipe(
       catchError(error => {
         this.handleError(error);

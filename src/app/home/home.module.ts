@@ -19,6 +19,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ViewLogsComponent } from './dailog/view-logs/view-logs.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ConfirmationPopupComponent } from './dailog/confirmation-popup/confirmation-popup.component';
+import { ProjectsLandingComponent } from './projects-landing/projects-landing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ConfirmationPopupComponent } from './dailog/confirmation-popup/confirma
     StacksPageComponent,
     ViewStacksComponent,
     ViewLogsComponent,
-    ConfirmationPopupComponent
+    ConfirmationPopupComponent,
+    ProjectsLandingComponent
   ],
   imports: [
     CommonModule,

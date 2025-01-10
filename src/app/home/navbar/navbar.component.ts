@@ -18,13 +18,17 @@ export class NavbarComponent {
   ) { }
   routes: { path: string[], label: string }[] = [
     {
-      path: ['/home/stacks'],
-      label: 'Stacks'
+      path: ['/home/projects'],
+      label: 'Projects'
     },
-    {
-      path: ['/home/instances'],
-      label: 'Instances'
-    },
+    // {
+    //   path: ['/home/stacks'],
+    //   label: 'Stacks'
+    // },
+    // {
+    //   path: ['/home/instances'],
+    //   label: 'Instances'
+    // },
     {
       path: ['/home/settings'],
       label: 'Settings'

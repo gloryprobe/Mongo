@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeLandingComponent } from './home-landing/home-landing.component';
 import { LoginComponent } from './login/login.component';
 import { StacksPageComponent } from './stacks-page/stacks-page.component';
+import { ProjectsLandingComponent } from './projects-landing/projects-landing.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'stacks',
     component: StacksPageComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsLandingComponent
   }
 ];
 
