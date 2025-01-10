@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PPTableConfig, TableState } from 'src/app/probeplus/_models/pp-column.model';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { CreateProjectComponent } from '../dailog/create-project/create-project.component';
 
 @Component({
   selector: 'app-projects-landing',
@@ -13,44 +14,58 @@ export class ProjectsLandingComponent implements OnInit {
     private apiService: ApiService
   ) { }
   ngOnInit(): void {
-    this.apiService.getAllProjects().subscribe((res)=>{
+    this.apiService.getAllProjects().subscribe((res) => {
       console.log(res);
-      
+
     })
   }
 
   columns = [
     {
-      id: 'instance_id',
-      label: 'Instance ID',
+      id: 'project_id',
+      label: 'Project ID',
       headerClass: ['text-start'],
       sortable: false,
       cellClass: [],
     },
     {
-      id: 'private_ip',
-      label: 'Private IP',
+      id: 'project_name',
+      label: 'Project Name',
       headerClass: ['text-start'],
       sortable: false,
       cellClass: [],
     },
     {
-      id: 'public_ip',
-      label: 'Public IP',
+      id: 'domains',
+      label: 'Domains',
       headerClass: ['text-start'],
       sortable: false,
       cellClass: [],
     },
     {
-      id: 'state',
-      label: 'State',
+      id: 'regions',
+      label: 'Regions',
       headerClass: ['text-start'],
       sortable: false,
       cellClass: [],
     },
     {
-      id: 'name',
-      label: 'Name',
+      id: 'micro_services',
+      label: 'Micro Services',
+      headerClass: ['text-start'],
+      sortable: false,
+      cellClass: [],
+    },
+    {
+      id: 'created_by',
+      label: 'Created By',
+      headerClass: ['text-start'],
+      sortable: false,
+      cellClass: [],
+    },
+    {
+      id: 'created_at',
+      label: 'Created Time',
       headerClass: ['text-start'],
       sortable: false,
       cellClass: [],
@@ -76,6 +91,14 @@ export class ProjectsLandingComponent implements OnInit {
     translate: false,
     tableState: TableState.DEFAULT,
   };
-  tableData = []
+  tableData = [
+    {
 
+    },
+
+  ]
+
+  openCreateProject() {
+    this.dailog.open(CreateProjectComponent, { width: '800px', maxHeight: '800px' })
+  }
 }

@@ -25,7 +25,7 @@ export class LoginComponent {
       this.spinner = false
       console.log(res);
       localStorage.setItem('token', res.access_token.access_token)
-      this.router.navigate(['/home/stacks'])
+      this.router.navigate(['/home/projects'])
       this.snackbarService.openSnackBar({ message: 'Logged In Successfully', type: 'success' })
     },
       (error) => {
